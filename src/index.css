@@ -4,44 +4,44 @@
 
 @layer base {
   :root {
-    --background: 35 20% 97%;
-    --foreground: 25 15% 12%;
+    --background: 0 0% 100%;
+    --foreground: 340 20% 15%;
 
-    --card: 35 20% 97%;
-    --card-foreground: 25 15% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 340 20% 15%;
 
-    --popover: 35 20% 97%;
-    --popover-foreground: 25 15% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 20% 15%;
 
-    --primary: 25 15% 12%;
-    --primary-foreground: 35 20% 97%;
+    --primary: 338 65% 68%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 15% 92%;
-    --secondary-foreground: 25 15% 20%;
+    --secondary: 340 40% 96%;
+    --secondary-foreground: 340 20% 20%;
 
-    --muted: 35 15% 92%;
-    --muted-foreground: 25 10% 50%;
+    --muted: 340 30% 95%;
+    --muted-foreground: 340 10% 52%;
 
-    --accent: 22 30% 70%;
-    --accent-foreground: 25 15% 12%;
+    --accent: 338 65% 68%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 35 20% 97%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 35 15% 88%;
-    --input: 35 15% 88%;
-    --ring: 25 15% 12%;
+    --border: 340 20% 90%;
+    --input: 340 20% 90%;
+    --ring: 338 65% 68%;
 
-    --radius: 0.25rem;
+    --radius: 1rem;
 
-    --sidebar-background: 35 20% 97%;
-    --sidebar-foreground: 25 15% 12%;
-    --sidebar-primary: 25 15% 12%;
-    --sidebar-primary-foreground: 35 20% 97%;
-    --sidebar-accent: 35 15% 92%;
-    --sidebar-accent-foreground: 25 15% 12%;
-    --sidebar-border: 35 15% 88%;
-    --sidebar-ring: 25 15% 12%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 340 20% 15%;
+    --sidebar-primary: 338 65% 68%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 340 40% 96%;
+    --sidebar-accent-foreground: 340 20% 15%;
+    --sidebar-border: 340 20% 90%;
+    --sidebar-ring: 338 65% 68%;
   }
 }
 
@@ -51,7 +51,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "Golos Text", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
   }
   h1,
@@ -67,14 +67,14 @@
     font-family: "Cormorant", serif;
   }
   .font-body {
-    font-family: "Golos Text", sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -83,7 +83,7 @@
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.7s ease forwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .delay-100 {
@@ -91,23 +91,19 @@
   opacity: 0;
 }
 .delay-200 {
-  animation-delay: 0.2s;
+  animation-delay: 0.25s;
   opacity: 0;
 }
 .delay-300 {
-  animation-delay: 0.3s;
-  opacity: 0;
-}
-.delay-400 {
   animation-delay: 0.4s;
   opacity: 0;
 }
-.delay-500 {
-  animation-delay: 0.5s;
+.delay-400 {
+  animation-delay: 0.55s;
   opacity: 0;
 }
-.delay-600 {
-  animation-delay: 0.6s;
+.delay-500 {
+  animation-delay: 0.7s;
   opacity: 0;
 }
 
@@ -115,44 +111,32 @@
   overflow: hidden;
 }
 .img-zoom img {
-  transition: transform 0.7s ease;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .img-zoom:hover img {
-  transform: scale(1.04);
-}
-
-.link-underline {
-  position: relative;
-  text-decoration: none;
-}
-.link-underline::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: currentColor;
-  transition: width 0.3s ease;
-}
-.link-underline:hover::after {
-  width: 100%;
+  transform: scale(1.05);
 }
 
 .slot-available {
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+  transition: all 0.2s ease;
   cursor: pointer;
 }
 .slot-available:hover {
-  background: hsl(25, 15%, 12%);
-  color: hsl(35, 20%, 97%);
-  border-color: hsl(25, 15%, 12%);
+  background: hsl(338, 65%, 68%);
+  border-color: hsl(338, 65%, 68%);
 }
 
 .slot-booked {
-  opacity: 0.4;
+  opacity: 0.45;
   cursor: not-allowed;
+}
+
+.card-hover {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px -10px hsla(338, 65%, 68%, 0.25);
 }
